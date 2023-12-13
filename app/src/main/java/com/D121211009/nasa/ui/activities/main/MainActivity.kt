@@ -1,5 +1,6 @@
 package com.D121211009.nasa.ui.activities.main
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -32,6 +33,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import com.D121211009.nasa.data.models.Photo
+import com.D121211009.nasa.ui.activities.detail.DetailActivity
 import com.D121211009.nasa.ui.theme.NASATheme
 
 class MainActivity : ComponentActivity() {
@@ -76,7 +78,9 @@ class MainActivity : ComponentActivity() {
                 .padding(16.dp)
                 .border(1.dp, Color.Gray, RoundedCornerShape(8.dp))
                 .clickable {
-                    // Handle photo item click here
+                    val intent = Intent(this, DetailActivity::class.java)
+                    intent.putExtra("PHOTO", photo)
+                    startActivity(intent)
                 }
         ) {
             Column(

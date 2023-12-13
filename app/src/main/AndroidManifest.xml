@@ -16,6 +16,9 @@
         android:theme="@style/Theme.NASA"
         tools:targetApi="31">
         <activity
+            android:name=".ui.activities.detail.DetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.activities.main.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
